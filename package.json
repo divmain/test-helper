@@ -2,9 +2,14 @@
   "name": "interlock-test-helper",
   "version": "0.1.0",
   "description": "Functional tests for Interlock builds and plugins.",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "check": "npm run lint && npm run test",
+    "build": "babel -d lib/ src/",
+    "lint": "eslint --ext .js .",
+    "prepublish": "npm run check && npm run build",
+    "preversion": "npm run check && npm run build",
+    "test": "mocha spec/run.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +20,13 @@
   "bugs": {
     "url": "https://github.com/interlockjs/test-helper/issues"
   },
-  "homepage": "https://github.com/interlockjs/test-helper#readme"
+  "homepage": "https://github.com/interlockjs/test-helper#readme",
+  "devDependencies": {
+    "@divmain/eslint-config-defaults": "^10.0.0",
+    "babel-cli": "^6.7.5",
+    "babel-eslint": "^6.0.2",
+    "babel-preset-nodejs-lts": "^1.2.1",
+    "eslint": "^2.8.0",
+    "eslint-plugin-filenames": "^0.2.0"
+  }
 }
