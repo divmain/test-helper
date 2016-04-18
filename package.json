@@ -28,5 +28,8 @@
     "babel-preset-nodejs-lts": "^1.2.1",
     "eslint": "^2.8.0",
     "eslint-plugin-filenames": "^0.2.0"
+  },
+  "dependencies": {
+    "jsdom": "^8.4.0"
   }
 }
