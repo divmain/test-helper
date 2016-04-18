@@ -4,12 +4,11 @@
   "description": "Functional tests for Interlock builds and plugins.",
   "main": "lib/index.js",
   "scripts": {
-    "check": "npm run lint && npm run test",
+    "check": "npm run lint",
     "build": "babel -d lib/ src/",
     "lint": "eslint --ext .js .",
     "prepublish": "npm run check && npm run build",
-    "preversion": "npm run check && npm run build",
-    "test": "mocha spec/run.js"
+    "preversion": "npm run check && npm run build"
   },
   "repository": {
     "type": "git",
